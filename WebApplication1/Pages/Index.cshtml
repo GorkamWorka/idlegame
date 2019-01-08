@@ -1,7 +1,16 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<h1>Hello Dave</h1>
 
-Welcome to your new app.
+<button class="btn btn-primary" onclick="@IncrementCount">Click me</button>
+@functions {
+DataModel data = new DataModel();
+Ressource res = new Ressource("test", 1);
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+void IncrementCount()
+{
+    data.addRessource(res);
+    res.label = "Test Res 1";
+}
+}
+<div>@data.GetRessourceByName("test").label</div><div>@data.GetRessourceByName("test").value</div>
