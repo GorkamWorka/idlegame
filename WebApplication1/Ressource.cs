@@ -13,7 +13,7 @@ namespace WebApplication1
         public Double growth = 0;
         public Double value = 0;
         public int power { get; } = 1;
-        public string name { get; }
+        public string name { get {return _name;} }
         public string label { get; set; }
 
         public Ressource(string name)
